@@ -53,6 +53,9 @@
     <link rel="manifest" href="/manifest.json">
     <!-- 51.LA 统计 -->
     <script src="./js/51LA.js"></script>
+    
+<script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+    
 </head>
 
 <body>
@@ -251,11 +254,88 @@
                     <script>
                         document.write((new Date()).getFullYear());
                     </script>
-                    <a href="https://imsyy.top" id="power-text">雪中明月</a>
+                    <a href="https://xn--fiqz59cpva341l.ml/" id="power-text">雪中明月</a>
                 </span>
         
 
             </div>
+            
+            
+            <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("你干嘛","基尼泰美","油饼","树脂","两年半","唧唧","大家好","练习生","荔枝","食不食","真爱鲲","giegie");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        3000,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+
+<script type="text/javascript">  
+ (function($){  
+     $.fn.snow = function(options){  
+     var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px', 'cursor': 'pointer'}).html('❄'),  
+     documentHeight  = $(document).height(),  
+     documentWidth   = $(document).width(),  
+     defaults = {  
+         minSize     : 10,  
+         maxSize     : 20,  
+         newOn       : 1000,  
+         flakeColor  : "#FFFFFF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */  
+     },  
+     options = $.extend({}, defaults, options);  
+     var interval= setInterval( function(){  
+     var startPositionLeft = Math.random() * documentWidth - 100,  
+     startOpacity = 0.5 + Math.random(),  
+     sizeFlake = options.minSize + Math.random() * options.maxSize,  
+     endPositionTop = documentHeight - 200,  
+     endPositionLeft = startPositionLeft - 500 + Math.random() * 500,  
+     durationFall = documentHeight * 10 + Math.random() * 5000;  
+     $flake.clone().appendTo('body').css({  
+         left: startPositionLeft,  
+         opacity: startOpacity,  
+         'font-size': sizeFlake,  
+         color: options.flakeColor  
+     }).animate({  
+         top: endPositionTop,  
+         left: endPositionLeft,  
+         opacity: 0.2  
+     },durationFall,'linear',function(){  
+         $(this).remove()  
+     });  
+     }, options.newOn);  
+     };  
+ })(jQuery);  
+ $(function(){  
+     $.fn.snow({   
+         minSize: 5, /* 定义雪花最小尺寸 */  
+         maxSize: 100,/* 定义雪花最大尺寸 */  
+         newOn: 500  /* 定义密集程度，数字越小越密集 */  
+     });  
+ });  
+</script>  
+            
             
         </footer>
     </section>
