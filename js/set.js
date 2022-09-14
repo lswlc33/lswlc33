@@ -93,7 +93,8 @@ function setBgImgInit() {
 
     switch (bg_img["type"]) {
         case "1":
-            $('#bg').attr('src', bg_img_preinstall[4]); //随机动漫
+            
+            $('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 10)}.webp`) //随机默认壁纸
             break;
         case "2":
             $('#bg').attr('src', bg_img_preinstall[2]); //必应每日
@@ -102,7 +103,7 @@ function setBgImgInit() {
             $('#bg').attr('src', bg_img_preinstall[3]); //随机风景
             break;
         case "4":
-            $('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 10)}.webp`) //随机默认壁纸
+            $('#bg').attr('src', bg_img_preinstall[4]); //随机动漫
             break;
     }
 };
