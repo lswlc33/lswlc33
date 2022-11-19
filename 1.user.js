@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         学习通网课小助手
-// @namespace    noshuang
+// @name         李大侠の自用脚本
+// @namespace    lidaxia666
 // @version      3.1
-// @description  学习通网课小助手
+// @description  李大侠の自用脚本
 // @author       lidaxia
 // @match        *://*.chaoxing.com/*
 // @connect      cx.icodef.com
@@ -18,8 +18,8 @@
 // @require      https://cdn.jsdelivr.net/gh/photopea/Typr.js@f4fcdeb8014edc75ab7296bd85ac9cde8cb30489/src/Typr.U.min.js
 // @resource     Table https://www.forestpolice.org/ttf/2.0/table.json
 // @license      MIT
-// @original-script 学习通网课小助手
-// @original-author wyn665817
+// @original-script 李大侠の自用脚本
+// @original-author lidaxia
 // @original-license MIT
 // ==/UserScript==
 
