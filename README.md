@@ -7,6 +7,8 @@
 ![](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-Python-brightgreen)
 ![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-Pro%20Max%20Ultra-lightgrey)
 
+## 😶‍🌫️语言分布
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lswlc33&layout=compact)
 ## 😶‍🌫️主页和博客
 Home:[Visit the page](https://xn--fiqz59cpva341l.ml/)  
 Blog:[Visit the page](https://blog.xn--fiqz59cpva341l.ml/)
@@ -21,5 +23,4 @@ Blog:[Visit the page](https://blog.xn--fiqz59cpva341l.ml/)
 
 ## 😶‍🌫️统计表格
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=lswlc33&show_icons=true&hide=contribs)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lswlc33&layout=compact)
 
