@@ -69,11 +69,11 @@ window.addEventListener('load', function () {
     //中文字体缓加载-此处写入字体源文件
     //先行加载简体中文子集，后续补全字集
     //由于压缩过后的中文字体仍旧过大，可转移至对象存储或 CDN 加载
-    //     const font = new FontFace(
-    //         "MiSans",
-    //         "url(" + "./font/MiSans-Regular.woff2" + ")"
-    //     );
-    //     document.fonts.add(font);
+    const font = new FontFace(
+        "MiSans",
+        "url(" + "./font/MiSans-Regular.woff2" + ")"
+    );
+    document.fonts.add(font);
 
 // }, false)
 
