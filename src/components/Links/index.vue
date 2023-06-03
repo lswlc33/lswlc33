@@ -33,18 +33,18 @@ import { Icon } from "@vicons/utils";
 import {
   Link,
   Blog,
-  CompactDisc,
   Cloud,
   Compass,
-  Book,
   Fire,
+  Playstation,
+  Image,
 } from "@vicons/fa";
 
 // 网站链接数据
 // 建议不要超出6个，若需要超出请自行调整样式
 let linksData = [
   {
-    icon: Blog,
+    icon: Image,
     name: "项目",
     link: "https://github.com/lswlc33",
   },
@@ -54,22 +54,22 @@ let linksData = [
     link: "http://pan.xn--fiqz59cpva341l.ml/",
   },
   {
-    icon: CompactDisc,
-    name: "壁纸",
-    link: "http://wallpaper.xn--fiqz59cpva341l.ml/",
+    icon: Blog,
+    name: "博客",
+    link: "http://blog.xn--fiqz59cpva341l.ml/",
   },
   {
-    icon: Compass,
+    icon: Fire,
     name: "福利",
     link: "http://fuli.xn--fiqz59cpva341l.ml",
   },
   {
-    icon: Book,
+    icon: Playstation,
     name: "游戏",
     link: "http://paimon.xn--fiqz59cpva341l.ml",
   },
   {
-    icon: Fire,
+    icon: Compass,
     name: "开往",
     link: "https://www.travellings.cn/go.html",
   },
