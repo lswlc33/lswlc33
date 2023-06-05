@@ -24,7 +24,7 @@ let bgUrl = ref(null); // 壁纸链接
 
 const changeBg = (type) => {
   if (type == 0) {
-    bgUrl.value = `/images/background1.webp`;
+    bgUrl.value = `https://i.imgloc.com/2023/06/05/VCuCu3.png`;
   } else if (type == 1) {
     bgUrl.value = "https://api.dujin.org/bing/1920.php";
   } else if (type == 2) {
