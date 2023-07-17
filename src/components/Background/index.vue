@@ -3,13 +3,7 @@
     <img class="bg" :src="bgUrl" alt="cover" />
     <div :class="store.backgroundShow ? 'gray sm' : 'gray'" />
     <transition name="el-fade-in-linear">
-      <a
-        class="down"
-        :href="bgUrl"
-        target="_blank"
-        v-show="store.backgroundShow && store.coverType != '3'"
-        >下载壁纸</a
-      >
+      <a class="down" :href="bgUrl" target="_blank" v-show="store.backgroundShow && store.coverType != '3'">下载壁纸</a>
     </transition>
   </div>
 </template>
@@ -24,7 +18,7 @@ let bgUrl = ref(null); // 壁纸链接
 
 const changeBg = (type) => {
   if (type == 0) {
-    bgUrl.value = `https://i.imgloc.com/2023/06/05/VCuCu3.png`;
+    bgUrl.value = `https://xzmy.ml/img/background1.webp`;
   } else if (type == 1) {
     bgUrl.value = "https://api.dujin.org/bing/1920.php";
   } else if (type == 2) {
@@ -77,6 +71,7 @@ watch(
     transition: all 1.5s ease 0s;
     backface-visibility: hidden;
   }
+
   .gray {
     opacity: 1;
     position: absolute;
@@ -84,18 +79,18 @@ watch(
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(
-        rgba(0, 0, 0, 0) 0,
-        rgba(0, 0, 0, 0.5) 100%
-      ),
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 0,
+        rgba(0, 0, 0, 0.5) 100%),
       radial-gradient(rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 0.3) 166%);
 
     transition: 1.5s;
+
     &.sm {
       opacity: 0;
       transition: 1.5s;
     }
   }
+
   .down {
     font-size: 16px;
     color: white;
@@ -113,10 +108,12 @@ watch(
     display: flex;
     justify-content: center;
     align-items: center;
+
     &:hover {
       transform: scale(1.05);
       background-color: #00000060;
     }
+
     &:active {
       transform: scale(1);
     }
