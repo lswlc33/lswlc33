@@ -51,22 +51,22 @@ let linksData = [
   {
     icon: Cloud,
     name: "网盘",
-    link: "http://pan.xn--fiqz59cpva341l.ml/",
+    link: "http://pan.xn--fiqz59cpva341l.top/",
   },
   {
     icon: Blog,
     name: "博客",
-    link: "http://blog.xn--fiqz59cpva341l.ml/",
+    link: "http://blog.xn--fiqz59cpva341l.top/",
   },
   {
     icon: Fire,
     name: "福利",
-    link: "http://fuli.xn--fiqz59cpva341l.ml",
+    link: "http://fuli.xn--fiqz59cpva341l.top",
   },
   {
     icon: Playstation,
     name: "游戏",
-    link: "http://paimon.xn--fiqz59cpva341l.ml",
+    link: "http://paimon.xn--fiqz59cpva341l.top",
   },
   {
     icon: Compass,

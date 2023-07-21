@@ -3,7 +3,7 @@
     <div class="power" v-show="!store.playerState">
       <span
         >Copyright&nbsp;&copy;&nbsp;{{ fullYear }}
-        <a href="http://xn--fiqz59cpva341l.ml/">雪中明月</a>
+        <a href="http://xn--fiqz59cpva341l.top/">雪中明月</a>
       </span>
       <span class="hidden"
         >&nbsp;&amp;&nbsp;<a
@@ -14,7 +14,7 @@
         </a></span
       >&nbsp;&amp;
       <!-- 站点备案 -->
-      <a href="https://icp.gov.moe/?keyword=https%3A%2F%2Fxn--fiqz59cpva341l.ml" target="_blank"
+      <a href="https://icp.gov.moe/?keyword=https%3A%2F%2Fxn--fiqz59cpva341l.top" target="_blank"
         >萌ICP备20220479号</a
       >
     </div>
