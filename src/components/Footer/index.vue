@@ -14,9 +14,7 @@
         </a></span
       >&nbsp;&amp;
       <!-- 站点备案 -->
-      <a href="https://icp.gov.moe/?keyword=https%3A%2F%2Fxn--fiqz59cpva341l.top" target="_blank"
-        >萌ICP备20220479号</a
-      >
+      <a href="https://icp.gov.moe/?keyword=20230701" target="_blank">萌ICP备20230701号</a>
     </div>
     <div class="lrc" v-show="store.playerState">
       <music-one theme="filled" size="18" fill="#efefef" />
