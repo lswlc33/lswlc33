@@ -1,0 +1,22 @@
+@import url(global.css);
+
+@media screen and (min-width:768px) {
+    #right {
+        display: flex;
+    }
+
+    #expand1{
+        display: none
+    }
+
+    #expand2{
+        display: none
+    }
+
+    #right {
+        margin-left: 50px;
+
+
+    }
+    
+}
