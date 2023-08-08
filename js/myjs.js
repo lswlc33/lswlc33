@@ -2,6 +2,7 @@
 function expand_open() {
   var left = document.getElementById('left')
   var right = document.getElementById('right')
+  show_toast('正在切换！',0)
 
   setTimeout(() => {
     left.style.display = 'none'
@@ -15,6 +16,7 @@ function expand_open() {
 function expand_close() {
   var left = document.getElementById('left')
   var right = document.getElementById('right')
+  show_toast('正在切换！',0)
 
   setTimeout(() => {
     left.style.display = 'flex'
