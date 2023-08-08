@@ -7,6 +7,7 @@
     color: white;
     font-family: "微软雅黑", "Arial Unicode MS";
     font-weight: 500;
+    user-select: none;
 }
 
 a {
