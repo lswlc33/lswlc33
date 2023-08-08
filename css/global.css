@@ -66,6 +66,7 @@ a {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    transition: 0.3s;
 }
 
 
@@ -205,6 +206,7 @@ a {
     width: 100%;
     display: none;
     flex-direction: column;
+    transition: 0.3s;
 }
 
 #box_top {
