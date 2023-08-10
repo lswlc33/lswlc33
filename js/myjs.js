@@ -68,9 +68,9 @@ function change_onelrc() {
         const from = document.getElementById('lrc_author')
         lrc.innerText = data.hitokoto
         from.innerText = '——' + data.from
-        show_toast('一言更新成功！',1)
+        show_toast('一言更新成功！', 1)
       }
-      
+
 
     })
     .catch()
@@ -82,11 +82,15 @@ function change_onelrc() {
 
 setTimeout(() => {
   change_onelrc()
+}, 1000);
+
+
+setTimeout(() => {
   show_toast(get_hello(), 3)
-  
 }, 2000);
 
-window.onload = function(){
-  load_beginning()
-  init_config()
-}
+
+
+
+load_beginning()
+init_config()

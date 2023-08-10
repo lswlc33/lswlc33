@@ -15,7 +15,7 @@ function load_beginning(wait_time = 1){
     // 创建背景
     var beginning = document.createElement('div')
     beginning.style.position = 'fixed'
-    beginning.style.margin =
+    beginning.style.top = 0
     beginning.style.backgroundColor = 'white'
     beginning.style.width = '100dvw'
     beginning.style.height = '100dvh'
@@ -65,9 +65,10 @@ function load_beginning(wait_time = 1){
 
     // 动画流程
     setTimeout(() => {
+        console.log('开始加载')
         beginning.style.opacity = 1
         yuanshen.style.display = 'none'
-    }, 100);
+    }, 0);
 
     setTimeout(() => {
         mihoyo.style.opacity = 0
@@ -81,14 +82,18 @@ function load_beginning(wait_time = 1){
     }, 1500);
 
     setTimeout(() => {
-        window.addEventListener("load", hide());
+        if (document.readyState === "complete") {
+            hide()
+        }else{
+            window.addEventListener("load", hide);
+        }
     }, 1500 + wait_time * 1000);
     
-    setTimeout(() => {
-        document.body.removeChild(beginning)
-    }, 2000 + wait_time * 1000);
-
     function hide() {
         beginning.style.opacity = 0
+        setTimeout(() => {
+            console.log('加载完成')
+            document.body.removeChild(beginning)
+        },500);
     }
 }
