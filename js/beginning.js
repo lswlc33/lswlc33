@@ -84,6 +84,10 @@ function load_beginning(wait_time = 1){
         window.addEventListener("load", hide());
     }, 1500 + wait_time * 1000);
     
+    setTimeout(() => {
+        document.body.removeChild(beginning)
+    }, 2000 + wait_time * 1000);
+
     function hide() {
         beginning.style.opacity = 0
     }
