@@ -30,7 +30,7 @@ var contact_list = [
     },
     {
         type: 'wechat',
-        show: 1,
+        show: 0,
         herf: '',
     },
     {
