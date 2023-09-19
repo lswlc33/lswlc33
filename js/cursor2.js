@@ -73,7 +73,7 @@ function addListener() {
         setTimeout(() => {
             mouse_circle_2.style.transform = "scale(0.8)"
         }, 200);
-        
+
     })
     document.addEventListener("mouseup", function () {
         mouse_circle_1.style.transform = "scale(1)"     // 回正
@@ -101,6 +101,11 @@ function circle_move() {
 
 
 onload = () => {
+    // 检测是否桌面端
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobile) {
+        return false
+    }
     // 创建光标元素
     hide_cursor()
     creat_new_cursor()
