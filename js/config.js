@@ -36,7 +36,7 @@ var contact_list = [
     {
         type: 'telegram',
         show: 1,
-        herf: 'https://t.me/cai_xu_ikun',
+        herf: 'https://t.me/xzmy_reply_bot',
     },
 
 ]
