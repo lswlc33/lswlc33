@@ -18,7 +18,7 @@ Blog:[Visit the page](https://blog.xn--fiqz59cpva341l.top/)
 ## 😶‍🌫️Talk to me
 ![](https://img.shields.io/badge/Github-lswlc33-lightgrey?style=flat-square)  
 ![](https://img.shields.io/badge/Telegram-xzmy__reply__bot-blue?style=flat-square)  
-![](https://img.shields.io/badge/Email-lswlc33%40qq.com-brightgreen?style=flat-square)  
+![](https://img.shields.io/badge/Email-lswlc33%40outlook.com-brightgreen?style=flat-square)  
 
 
 
