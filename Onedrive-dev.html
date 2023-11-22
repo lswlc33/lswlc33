@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><!--Title--></title>
+
+    <!--MdRequireStart-->
+    <link rel="stylesheet" href="https://unpkg.com/github-markdown-css@3.0.1/github-markdown.css">
+    <script type="text/javascript" src="?jsFile=marked.js"></script>
+    <!--MdRequireEnd-->
+
     <link rel="shortcut icon" href="<!--base_path-->favicon.ico" type="image/x-icon">
     <!--https://p.sfx.ms/images/favicon.ico-->
     <style>
@@ -317,6 +323,19 @@
 <!--DiskPathArrayEnd-->
                     </h1>
                 </div>
+<!--HeadmdStart-->
+                <div class="main-item-list" id="head-div">
+                    <div class="list-container">
+                        <div class="list-header-container">
+                            <div class="head">
+                                <div class="markdown-body" id="head">
+                                    <textarea id="head-md" style="display:none;"><!--ReadmemdContent--></textarea>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+<!--HeadmdEnd-->
 <!--IsFileStart-->
                 <div class="main-item-list">
                     <div class="main-items main-item-title">
@@ -391,6 +410,19 @@
 <!--FileListEnd-->
                 </div>
 <!--IsFolderEnd-->
+<!--ReadmemdStart-->
+                <div class="main-item-list" id="readme-div">
+                        <div class="list-container">
+                            <div class="list-header-container">
+                                <div class="readme">
+                                    <div class="markdown-body" id="readme">
+                                        <textarea id="readme-md" style="display:none;"><!--ReadmemdContent--></textarea>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+<!--ReadmemdEnd-->
             </div>
         </div>
 <!--ListEnd-->
@@ -590,6 +622,20 @@
             document.getElementById('login_input').focus();
         }
 <!--LoginEnd-->
+
+<!--HeadmdStart-->
+    var $head = document.getElementById('head');
+    if ($head) {
+        //document.getElementById('head-div').parentNode.insertBefore(document.getElementById('head-div'),document.getElementById('list-div'));
+        $head.innerHTML = marked(document.getElementById('head-md').innerText);
+    }
+<!--HeadmdEnd-->
+<!--ReadmemdStart-->
+    var $readme = document.getElementById('readme');
+    if ($readme) {
+        $readme.innerHTML = marked(document.getElementById('readme-md').innerText);
+    }
+<!--ReadmemdEnd-->
     </script>
 </body>
 </html>
