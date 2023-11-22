@@ -49,6 +49,8 @@
         }
         .pull-left { 
             float: left; 
+            padding: 0px 20px;
+            background: rgba(255,255,255,0.2);
         }
         .pull-right { 
             float: right; 
@@ -81,8 +83,6 @@
             background-color: #0078D4;
         }
         header nav {
-            margin: 0 auto;
-            padding: 0 10px;
             height: 48px;
             color: #FFF;
             box-sizing: border-box;
@@ -106,9 +106,10 @@
         main { 
             position: relative;
             height: 100%;
+            background: #f0f0f4;
         }
         main .scroll {
-            overflow-y: scroll;
+            overflow-y: auto;
             position: absolute;
             top: 0;
             right: 0;
@@ -116,18 +117,24 @@
             left: 0;
         }
         main .main-item-list {
-            padding-left: 32px;
-            padding-right: 32px;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            background: white;
+            margin: 20px;
+            border-radius: 20px;
+            padding: 10px 0px;
+            box-shadow: 0px 0px 41px rgba(0,0,0,0.2);
             height: 32px;
             line-height: 32px;
-            font-size: 12px;
+            font-size: 14px;
             box-sizing: border-box;
         }
         main .main-title h1 {
             margin: 0;
             padding: 32px;
             font-size: 20px;
-            font-weight: 100;
+            font-weight: 600;
         }
         main .main-items:hover { 
             background-color: #F4F4F4;
@@ -139,9 +146,10 @@
             display: flex;
             justify-content: flex-start;
             width: 100%;
-            height: 32px;
+            height: auto;
             border-bottom: 1px solid #FFF;
             box-sizing: border-box;
+
         }
         main .main-item-list .inner-container > div {
             padding-left: 12px;
@@ -194,6 +202,9 @@
             justify-content: flex-start;
             border-bottom: 1px solid #F4F4F4;
             box-sizing: border-box;
+            padding: 0 20px;
+            overflow: hidden;
+
         }
         main .main-item-list .main-items-displayName,
         main .main-item-list .main-items-fileName { 
@@ -297,7 +308,7 @@
                 <div class="main-item-list">
                     <div class="main-items main-item-title">
                         <div class="inner-container">
-                            <div style="margin-top: 24px;display: flex;flex-direction: column;width: 100%;height: 100%;align-items: center;">
+                            <div style="margin: 24px;display: flex;flex-direction: column;width: 100%;height: 100%;align-items: center;">
                                 <textarea id="url" title="url" rows="1" style="width: 295px;margin-top: 30px;border: 3px solid rgb(0, 120, 212);outline: none;overflow: hidden;padding: 10px;min-height: 60px;" readonly><!--FileEncodeUrl--></textarea>
                                 <div style="background: #0078D4;padding: 5px;width: 100px;margin-top: 20px;"><a href="<!--FileEncodeUrl-->" style="color: white; font-size: 19px; display: block; text-align: center;">点此下载</a></div>
 
@@ -311,7 +322,7 @@
                                 <!--IsvideoFileEnd-->
                             </div>
                         </div>
-                    </div>
+                    </div>https://raw.githubusercontent.com/lswlc33/lswlc33/master/Onedrive-dev.html
                 </div>
 <!--IsFileEnd-->
 <!--IsFolderStart-->
