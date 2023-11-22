@@ -20,6 +20,13 @@
         }
         a { 
             text-decoration: none;
+            font-weight: 400;
+            color: rgb(97, 97, 97);
+            transition: 0.5s;
+        }
+        a :hover{ 
+            font-weight: 600;
+            color: rgb(36, 36, 36);
         }
         ul { 
             list-style: none;
@@ -90,6 +97,10 @@
         header nav a {
             color: #FFF;
             font-weight: 600;
+            transition: 0.5s;
+        }
+        header nav a :hover {
+            color: #FFF;
         }
         header nav .lang .language { outline: none; }
         header .control {
@@ -133,11 +144,12 @@
         main .main-title h1 {
             margin: 0;
             padding: 32px;
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 600;
         }
         main .main-items:hover { 
             background-color: #F4F4F4;
+            transform: scale(0.980);
         }
         main .main-items:hover .main-items-radio { 
             display: inline-block!important; 
@@ -204,7 +216,7 @@
             box-sizing: border-box;
             padding: 0 20px;
             overflow: hidden;
-
+            transition: 0.5s;
         }
         main .main-item-list .main-items-displayName,
         main .main-item-list .main-items-fileName { 
@@ -309,7 +321,7 @@
                     <div class="main-items main-item-title">
                         <div class="inner-container">
                             <div style="margin: 24px;display: flex;flex-direction: column;width: 100%;height: 100%;align-items: center;">
-                                <textarea id="url" title="url" rows="1" style="width: 295px;margin-top: 30px;border: 3px solid rgb(0, 120, 212);outline: none;overflow: hidden;padding: 10px;min-height: 60px;" readonly><!--FileEncodeUrl--></textarea>
+                                这是下载直链<textarea id="url" title="url" rows="1" style="width: 295px;margin-top: 10px;border: 3px solid rgb(0, 120, 212);outline: none;overflow: hidden;padding: 10px;min-height: 60px;" readonly><!--FileEncodeUrl--></textarea>
                                 <div style="background: #0078D4;padding: 5px;width: 100px;margin-top: 20px;"><a href="<!--FileEncodeUrl-->" style="color: white; font-size: 19px; display: block; text-align: center;">点此下载</a></div>
 
                             </div>
