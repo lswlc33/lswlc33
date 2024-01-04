@@ -76,9 +76,17 @@ function change_onelrc() {
     .catch()
 }
 
+// 为壁纸添加动态效果
+var innerdiv = document.querySelector('#background_img')
+var outerdiv = document.querySelector('#background')
+document.addEventListener('mousemove', (event) => {
+  var x = event.clientX;
+  var y = event.clientY;
+  x = x - outerdiv.offsetWidth / 2;
+  y = y - outerdiv.offsetHeight / 2;
 
-
-
+  innerdiv.style.transform = `scale(1.05) translate(${-x / 200}px,${-y / 200}px)`;
+})
 
 setTimeout(() => {
   change_onelrc()
@@ -91,6 +99,5 @@ setTimeout(() => {
 
 
 
-
-load_beginning()
+// load_beginning()
 init_config()

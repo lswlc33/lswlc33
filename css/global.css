@@ -20,8 +20,11 @@ a {
     left: 0;
     width: 100dvw;
     height: 100dvh;
-    background: background_img center center no-repeat;
     background-size: cover;
+}
+
+#background_img {
+    height: 100%;
 }
 
 #background_shadow {
