@@ -66,6 +66,7 @@ function load_beginning(wait_time = 1){
     // 动画流程
     setTimeout(() => {
         console.log('开始加载')
+        show_toast("正在加载", 3)
         beginning.style.opacity = 1
         yuanshen.style.display = 'none'
     }, 0);

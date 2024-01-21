@@ -59,6 +59,10 @@ a {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(20px);
+
+    a{
+        word-break: keep-all;
+    }
 }
 
 

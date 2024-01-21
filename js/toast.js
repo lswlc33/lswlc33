@@ -11,7 +11,7 @@ function get_hello() {
     } else if (hour >= 13) {
         return '下午好，欢迎光临本站！'
     } else if (hour >= 11) {
-        return '中午好，你吃了吗？'
+        return '中午好，今天吃的啥？'
     } else if (hour >= 6) {
         return '早上好，新的一天开始啦！'
     } else {

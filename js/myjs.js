@@ -55,9 +55,7 @@ function change_time() {
 }
 
 // 一言的更改与更新
-
-
-function change_onelrc() {
+function change_onelrc(notice = true) {
   fetch('https://v1.hitokoto.cn')
     .then(response => response.json())
     .then(data => {
@@ -68,7 +66,9 @@ function change_onelrc() {
         const from = document.getElementById('lrc_author')
         lrc.innerText = data.hitokoto
         from.innerText = '——' + data.from
-        show_toast('一言更新成功！', 1)
+        if (notice) {
+          show_toast('一言更新成功！', 1)
+        }
       }
 
 
@@ -89,7 +89,7 @@ document.addEventListener('mousemove', (event) => {
 })
 
 setTimeout(() => {
-  change_onelrc()
+  change_onelrc(false)
 }, 1000);
 
 
@@ -98,6 +98,5 @@ setTimeout(() => {
 }, 2000);
 
 
-
-// load_beginning()
+load_beginning()
 init_config()
