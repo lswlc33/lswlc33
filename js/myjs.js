@@ -77,16 +77,32 @@ function change_onelrc(notice = true) {
 }
 
 // 为壁纸添加动态效果
-var innerdiv = document.querySelector('#background_img')
-var outerdiv = document.querySelector('#background')
-document.addEventListener('mousemove', (event) => {
-  var x = event.clientX;
-  var y = event.clientY;
-  x = x - outerdiv.offsetWidth / 2;
-  y = y - outerdiv.offsetHeight / 2;
+let innerdiv = document.querySelector('#background_img')
+let outerdiv = document.querySelector('#background')
+// 判断平台
+if (!/mobile/i.test(navigator.userAgent.toLowerCase())) {
+  // 添加鼠标壁纸微动
+  window.addEventListener('mousemove', (event) => {
+    let x = event.clientX;
+    let y = event.clientY;
+    x = x - outerdiv.offsetWidth / 2;
+    y = y - outerdiv.offsetHeight / 2;
 
-  innerdiv.style.transform = `scale(1.05) translate(${-x / 200}px,${-y / 200}px)`;
-})
+    innerdiv.style.transform = `scale(1.05) translate(${-x / 200}px,${-y / 200}px)`;
+  });
+} else {
+  // 添加重力壁纸微动
+  let currentGamma = 0;
+  let currentBeta = 0;
+  window.addEventListener('deviceorientation', (event) => {
+    let beta = event.beta * 0.1; // 前后倾斜
+    let gamma = event.gamma * 0.1; // 左右倾斜
+
+    currentGamma += (gamma - currentGamma) * 0.1;
+    currentBeta += (beta - currentBeta) * 0.1;
+    document.getElementById('background_img').style.transform = `scale(1.05) translate(${currentGamma}px, ${currentBeta}px)`;
+  });
+}
 
 setTimeout(() => {
   change_onelrc(false)
