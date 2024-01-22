@@ -4,7 +4,8 @@
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="icon" href="img/favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="img/favicon.png">
     <link rel="stylesheet" href="css/mobile.css">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -71,11 +72,19 @@
 </body>
 
 <footer>
+    <!-- setting -->
     <script src="js/config.js"></script>
+    <!-- toast -->
     <script src="js/toast.js"></script>
+    <!-- 特效光标 -->
     <script src="js/cursor2.js"></script>
+    <!-- 原神开场动画 -->
     <script src="js/beginning.js"></script>
     <script src="js/myjs.js"></script>
+    <!-- PWA -->
+    <script type="text/javascript">
+        if (navigator.serviceWorker != null) { navigator.serviceWorker.register('sw.js') }
+    </script>
 </footer>
 
 </html>
