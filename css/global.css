@@ -24,6 +24,7 @@ a {
 }
 
 #background_img {
+    background: url(https://lswlc33.gitee.io/img/background1.webp) 50% 50% / cover no-repeat;
     height: 100%;
 }
 
