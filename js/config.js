@@ -109,7 +109,7 @@ function init_config() {
     });
 
     // 设置背景图片
-    document.getElementById('background_img').style.background = 'url(' + background_img + ') center center no-repeat'
+    document.getElementById('background_img').style.background = 'url(' + background_img + ') center center / cover no-repeat;'
 
     // 设置链接盒子
     var divElements = document.querySelectorAll(".link_group .link_box");
