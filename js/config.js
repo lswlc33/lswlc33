@@ -10,7 +10,7 @@ var donmin = '雪中明月'
 var suffix = '.top'
 
 // 背景图片
-var background_img = "https://lswlc33.gitee.io/img/background1.webp"
+var background_img = "https://gitee.com/lswlc33/lswlc33/raw/master/img/background1.jpg"
 
 // 标题下面的句子
 var sentence_first = 'Here is a scentence'
