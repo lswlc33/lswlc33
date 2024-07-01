@@ -60,8 +60,8 @@ var links_list = [
         herf: 'http://paimon.xn--fiqz59cpva341l.top/',
     },
     {
-        text: '聊天',
-        herf: 'http://gpt.xn--fiqz59cpva341l.top/',
+        text: '测试',
+        herf: 'https://webtest.xn--fiqz59cpva341l.top/',
     },
     {
         text: '福利',
