@@ -10,7 +10,7 @@ var donmin = '雪中明月'
 var suffix = '.top'
 
 // 背景图片
-var background_img = "https://raw.githubusercontent.com/lswlc33/lswlc33/master/img/background1.jpg"
+var background_img = "https://xn--fiqz59cpva341l.top/img/background1.jpg"
 
 // 标题下面的句子
 var sentence_first = 'Here is a scentence'
