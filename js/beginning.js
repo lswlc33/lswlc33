@@ -31,14 +31,14 @@ function load_beginning(wait_time = 1){
     var gongyue = document.createElement('div')
     var mihoyo = document.createElement('div')
 
-    yuanshen.style.background = `url(data:image/png;base64,${yuanshen_img}) center center`
+    yuanshen.style.background = `url(data:image/jpeg;base64,${yuanshen_img}) center center`
     yuanshen.style.backgroundSize = '20%'
     yuanshen.style.backgroundRepeat = 'no-repeat'
     yuanshen.style.width = '100%'
     yuanshen.style.height = '100%'
     yuanshen.style.transition = 'opacity 0.5s'
 
-    gongyue.style.background = `url(data:image/png;base64,${gongyue_img}) center center`
+    gongyue.style.background = `url(data:image/jpeg;base64,${gongyue_img}) center center`
     gongyue.style.backgroundSize = '80%'
     gongyue.style.backgroundRepeat = 'no-repeat'
     gongyue.style.width = '100%'
@@ -48,7 +48,7 @@ function load_beginning(wait_time = 1){
     gongyue.style.opacity = 0
     gongyue.style.transition = 'opacity 0.5s'
 
-    mihoyo.style.background = `url(data:image/png;base64,${mihoyo_img}) center center`
+    mihoyo.style.background = `url(data:image/jpeg;base64,${mihoyo_img}) center center`
     mihoyo.style.backgroundSize = '30%'
     mihoyo.style.backgroundRepeat = 'no-repeat'
     mihoyo.style.width = '100%'
@@ -93,8 +93,12 @@ function load_beginning(wait_time = 1){
     function hide() {
         beginning.style.opacity = 0
         setTimeout(() => {
+            document.body.classList.add('anim-ready')
+        }, 200);
+        setTimeout(() => {
             console.log('加载完成')
             document.body.removeChild(beginning)
-        },500);
+            window.dispatchEvent(new Event('beginning-done'))
+        }, 500);
     }
 }

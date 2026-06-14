@@ -3,6 +3,7 @@ var mouse_circle_1 = ''
 var mouse_circle_2 = ''
 var cx = 0, cy = 0
 var mouseX = 0, mouseY = 0
+var frameId = null
 
 
 function creat_new_cursor() {
@@ -39,11 +40,7 @@ function creat_new_cursor() {
 
 
 function hide_cursor() {
-    // 设置默认光标隐藏
-    all_element = document.querySelectorAll("*")
-        .forEach(element => {
-            element.style.cursor = "none"
-        });
+    document.body.classList.add('custom-cursor')
 }
 
 
@@ -85,32 +82,30 @@ function addListener() {
 
 
 function circle_move() {
-    // 大圆的移动
     var ca = () => {
         cx += (mouseX - cx) / 10
         cy += (mouseY - cy) / 10
         mouse_circle_2.style.left = `${cx - 27}px`
         mouse_circle_2.style.top = `${cy - 27}px`
-        window.requestAnimationFrame(ca)
+        frameId = requestAnimationFrame(ca)
     }
-    window.requestAnimationFrame(ca)
+    frameId = requestAnimationFrame(ca)
 }
 
 
 
-
-
-onload = () => {
-    // 检测是否桌面端
-    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    if (isMobile) {
-        return false
-    }
-    // 创建光标元素
+window.addEventListener('load', () => {
+    if (isMobile) return
     hide_cursor()
     creat_new_cursor()
-    // 添加光标监听
     addListener()
-    // 设置外圈跟随
     circle_move()
-}
+})
+
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        if (frameId) { cancelAnimationFrame(frameId); frameId = null }
+    } else if (!isMobile && mouse_circle_2) {
+        circle_move()
+    }
+})

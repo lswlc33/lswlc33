@@ -16,6 +16,9 @@ var background_img = "https://xn--fiqz59cpva341l.top/img/background1.jpg"
 var sentence_first = 'Here is a scentence'
 var sentence_second = '呼噜呼噜喝~~~'
 
+// 移动端检测
+var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 // 社交链接
 var contact_list = [
     {
@@ -85,7 +88,7 @@ var footer_text = '雪中明月 & ' + '<a href="https://icp.gov.moe/?keyword=202
 */
 function init_config() {
     // 设置标题
-    document.querySelector('title').innerHTML = title
+    document.querySelector('title').textContent = title
 
     // 设置标题域名
     document.getElementById('donmin').innerText = donmin
@@ -101,7 +104,7 @@ function init_config() {
     divElements.forEach(function (element, index) {
         if (contact_list[index].show) {
             element.addEventListener("click", function () {
-                window.open(contact_list[index].herf, "_blank");
+                window.open(contact_list[index].herf, "_blank", "noopener,noreferrer");
             });
         } else {
             element.style.display = 'none'
@@ -116,7 +119,7 @@ function init_config() {
     divElements.forEach(function (element, index) {
         element.textContent = links_list[index].text;
         element.addEventListener("click", function () {
-            window.open(links_list[index].herf, "_blank");
+            window.open(links_list[index].herf, "_blank", "noopener,noreferrer");
         });
     });
 
@@ -124,8 +127,13 @@ function init_config() {
     var date = new Date();
     var year = date.getFullYear();
     var buttom_bar = document.getElementById('buttom_bar')
-    buttom_bar.innerHTML =
-        "Copyright © "
-        + year + ' '
-        + footer_text
+    buttom_bar.textContent = ''
+    buttom_bar.appendChild(document.createTextNode('Copyright © ' + year + ' 雪中明月 & '))
+    var icp_link = document.createElement('a')
+    icp_link.href = 'https://icp.gov.moe/?keyword=20230701'
+    icp_link.target = '_blank'
+    icp_link.rel = 'noopener noreferrer'
+    icp_link.textContent = '萌ICP备20230701号'
+    buttom_bar.appendChild(icp_link)
+    buttom_bar.classList.remove('loading')
 }

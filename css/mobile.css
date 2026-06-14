@@ -1,22 +1,71 @@
 @import url(global.css);
 
-@media screen and (min-width:768px) {
+@media screen and (max-width: 767px) {
+    #website_title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+
+    #suffix {
+        font-size: 22px;
+    }
+
+    #scentence {
+        height: 80px;
+    }
+
+    #scentence>* {
+        padding-left: 20px;
+    }
+
+    #contact_me>* {
+        width: 44px;
+        height: 44px;
+        margin: 6px;
+    }
+
+    .link_box {
+        height: 60px;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    #lrc_box {
+        padding: 14px;
+    }
+
+    #time_box {
+        font-size: 24px;
+        padding: 14px;
+    }
+
+    #left {
+        padding: 16px;
+    }
+
+    .expand {
+        padding: 14px;
+    }
+}
+
+@media screen and (min-width: 768px) {
     #right {
         display: flex;
     }
 
-    #expand1{
+    #expand1 {
         display: none
     }
 
-    #expand2{
+    #expand2 {
         display: none
     }
 
     #right {
         margin-left: 50px;
-
-
     }
-    
+
+    #buttom_bar {
+        font-size: 14px;
+    }
 }

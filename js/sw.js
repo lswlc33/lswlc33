@@ -1,29 +1,30 @@
 'use strict'
-var cacheStorageKey = 'minimal-pwa-8'
-let cacheName = 'pwa-you-website-cache'; // 缓存名字
-
-var cacheList = [ // 所需缓存的文件
+var cacheStorageKey = 'minimal-pwa-9'
+var cacheList = [
   '/',
-  "index.html"
+  'index.html',
+  'css/mobile.css',
+  'css/global.css',
+  'js/config.js',
+  'js/toast.js',
+  'js/cursor2.js',
+  'js/beginning.js',
+  'js/myjs.js',
+  'manifest.json',
+  'img/favicon.png'
 ]
 
 self.addEventListener('install', function(e) {
-  console.log('Cache event!')
   e.waitUntil(
-    // 安装服务者时，对需要缓存的文件进行缓存
     caches.open(cacheStorageKey).then(function(cache) {
-      console.log('Adding to Cache:', cacheList)
       return cache.addAll(cacheList)
     }).then(function() {
-      console.log('Skip waiting!')
       return self.skipWaiting()
     })
   )
 })
 
 self.addEventListener('activate', function(e) {
-  // 判断地址是不是需要实时去请求，是就继续发送请求
-  console.log('Activate event')
   e.waitUntil(
     Promise.all(
       caches.keys().then(cacheNames => {
@@ -34,22 +35,26 @@ self.addEventListener('activate', function(e) {
         })
       })
     ).then(() => {
-      console.log('Clients claims.')
       return self.clients.claim()
     })
   )
 })
 
 self.addEventListener('fetch', function(e) {
-  // 匹配到缓存资源，就从缓存中返回数据
   e.respondWith(
-    caches.match(e.request).then(function(response) {
-      if (response != null) {
-        console.log('Using cache for:', e.request.url)
-        return response
-      }
-      console.log('Fallback to fetch:', e.request.url)
-      return fetch(e.request.url)
+    caches.match(e.request).then(function(cached) {
+      var fetchPromise = fetch(e.request).then(function(networkResponse) {
+        if (networkResponse && networkResponse.status === 200) {
+          var clone = networkResponse.clone()
+          caches.open(cacheStorageKey).then(function(cache) {
+            cache.put(e.request, clone)
+          })
+        }
+        return networkResponse
+      }).catch(function() {
+        return cached
+      })
+      return cached || fetchPromise
     })
   )
 })
