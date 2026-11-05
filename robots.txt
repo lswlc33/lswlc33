@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# 常见后台/配置探测路径。这些本来就不存在（会返回 404），
+# 明确列出来只是让守规矩的爬虫别再反复试。
+Disallow: /.git/
+Disallow: /.env
+Disallow: /wp-admin/
+Disallow: /wp-login.php

@@ -10,7 +10,20 @@ var donmin = '雪中明月'
 var suffix = '.top'
 
 // 背景图片
-var background_img = "https://xn--fiqz59cpva341l.top/img/background1.jpg"
+// 同时提供 .webp（约 87KB）与 .jpg（约 167KB）两份，支持 WebP 的浏览器自动走小份。
+// 用 CSS.supports 探测而不是 UA 判断，探测失败一律回落 JPEG。
+// 用站内相对路径：原来写死 https://<域名>/img/... 会让本地调试也跑去打线上，
+// 而且跨域请求吃不到 Service Worker 缓存，白白多一次完整下载。
+var background_img = (function () {
+    var base = 'img/background1'
+    var webpOk = false
+    try {
+        webpOk = !!window.CSS && CSS.supports('background-image', 'url(x.webp)')
+    } catch (e) {
+        webpOk = false
+    }
+    return base + (webpOk ? '.webp' : '.jpg')
+})()
 
 // 标题下面的句子
 var sentence_first = 'Here is a scentence'

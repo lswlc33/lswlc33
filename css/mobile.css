@@ -1,4 +1,5 @@
-@import url(global.css);
+/* global.css 已由 index.html 用 <link> 并行引入，这里不要再用 @import：
+   @import 是串行阻塞的，曾导致 global.css 实测 25 秒超时。 */
 
 @media screen and (max-width: 767px) {
     #website_title {

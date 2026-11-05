@@ -6,11 +6,20 @@
     <meta charset="UTF-8">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="img/favicon.png">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- 图标改用本地 inline SVG（img/icons/*.svg），不再依赖 fonts.googleapis.com。
+         原来那个 <link> 在国内必然超时，图标会全部显示成空白方块。 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <!-- MiSans 走 media="print" + onload 换回来：字体 CSS 不阻塞首屏渲染，
+         代价是字体到位前先用系统字体（FOUT）。两个文件各 87KB，直连 TTFB 6.5~8.8s。 -->
     <link rel="stylesheet" crossorigin="anonymous"
-        href="https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Medium.min.css" />
+        href="https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Medium.min.css"
+        media="print" onload="this.media='all'" />
     <link rel="stylesheet" crossorigin="anonymous"
-        href="https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Bold.min.css" />
+        href="https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Bold.min.css"
+        media="print" onload="this.media='all'" />
+    <!-- 原先只引 mobile.css，靠它首行 @import 拉 global.css，形成串行阻塞链
+         （mobile.css 4.88s → global.css 实测 25s 超时）。改成两个 <link> 并行下载。 -->
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/mobile.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="雪中明月 の 个人主页">
@@ -37,13 +46,13 @@
                     <div></div>
                 </div>
                 <div id="contact_me">
-                    <span class="material-icons contact_ico">email</span>
-                    <span class="material-icons contact_ico">forum</span>
-                    <span class="material-icons contact_ico">chat_bubble</span>
-                    <span class="material-icons contact_ico">send</span>
+                    <img class="contact_ico" src="img/icons/email.svg" alt="email">
+                    <img class="contact_ico" src="img/icons/forum.svg" alt="forum">
+                    <img class="contact_ico" src="img/icons/chat_bubble.svg" alt="chat">
+                    <img class="contact_ico" src="img/icons/send.svg" alt="send">
                 </div>
                     <div id="expand1" class="expand" onclick="expand_toggle()">
-                    <span class="material-icons expand_icon">chevron_right</span>
+                    <img class="expand_icon" src="img/icons/chevron_right.svg" alt="">
                 </div>
             </div>
             <div id="right">
@@ -55,7 +64,7 @@
                     <div id="time_box" onclick="show_toast('时钟滴答滴答的声音你听懂了吗',1)">00:00:00</div>
                 </div>
                 <div id="box_centre">
-                    <span class="material-icons" id="box_centre_icon">star</span>常用网址导航
+                    <img id="box_centre_icon" src="img/icons/star.svg" alt="">常用网址导航
                 </div>
                 <div id="box_bottom">
                     <div id="group1" class="link_group">
@@ -69,7 +78,7 @@
                         <div class="link_box"></div>
                     </div>
                     <div id="expand2" class="expand" onclick="expand_toggle()">
-                        <span class="material-icons expand_icon">chevron_left</span>
+                        <img class="expand_icon" src="img/icons/chevron_left.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -88,8 +97,14 @@
     <script src="js/beginning.js"></script>
     <script src="js/myjs.js"></script>
     <!-- PWA -->
-    <script type="text/javascript">
-        if (navigator.serviceWorker != null) { navigator.serviceWorker.register('js/sw.js') }
+    <!-- 原来这里只有一行裸文本 `js/sw.js`（不是合法 JS，永远不会执行）。
+         SW 现在放在站点根目录 sw.js，默认 scope 为 /，才能真正接管页面。 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('sw.js').catch(function () { });
+            });
+        }
     </script>
 </body>
 

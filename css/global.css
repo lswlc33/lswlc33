@@ -228,7 +228,12 @@ a {
 }
 
 #contact_me>* {
+    /* 图标已从 material-icons 字体换成 <img> + 本地 SVG。
+       字体版靠 font-size 控制大小，img 版靠 padding 撑出原来的 28px 视觉尺寸，
+       这样外框（36px + margin 8px）和点击热区都没变。 */
     font-size: 28px;
+    box-sizing: border-box;
+    padding: 6px;
     width: 36px;
     height: 36px;
     margin: 8px;
@@ -244,8 +249,11 @@ a {
 }
 
 .expand_icon {
-    font-size: 28px;
+    /* 同上：img 版图标用显式尺寸代替 font-size（28px 字号在字体里约等于 28px 高）。 */
+    width: 28px;
+    height: 28px;
     opacity: 0.8;
+    display: block;
 }
 
 #right {
@@ -393,7 +401,9 @@ a {
 }
 
 #box_centre_icon {
-    font-size: 22px;
+    /* img 版图标：与 .expand_icon 同理，用宽高替代 font-size。 */
+    width: 22px;
+    height: 22px;
     margin: 8px;
     opacity: 0.7;
 }
